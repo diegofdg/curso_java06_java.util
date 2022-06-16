@@ -8,15 +8,14 @@ public class TestArrayReferencia {
 
 	public static void main(String[] args) {
 		Object[] referencias = new Object[5];
-		
-		CuentaCorriente cc = new CuentaCorriente(23, 44);
-		
-		//                          [ new |cc |null  |null  |null  ]
-		
+		//      [ new |cc |null  |null  |null  ]
+		CuentaCorriente cc = new CuentaCorriente(23, 44);		
+			
 		referencias[1] = cc;
 		
 		Cliente cliente = new Cliente();
-		referencias[4] = cliente;		
+		referencias[4] = cliente;
+		
 		
 		Cliente obtenido = (Cliente) referencias[4];
 		System.out.println(obtenido);
@@ -34,5 +33,5 @@ public class TestArrayReferencia {
 		for (int i = 0; i < referencias.length; i++) {
 			System.out.println(referencias[i]);
 		}
-	}
+	}		
 }
