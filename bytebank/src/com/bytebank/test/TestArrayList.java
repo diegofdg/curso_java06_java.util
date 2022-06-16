@@ -1,6 +1,7 @@
 package com.bytebank.test;
 
-import java.util.ArrayList;
+import java.util.List;
+import java.util.Vector;
 
 import com.bytebank.modelo.Cuenta;
 import com.bytebank.modelo.CuentaCorriente;
@@ -9,7 +10,12 @@ public class TestArrayList {
 
 	public static void main(String[] args) {
 		// <> Forzando a que acepte solo un tipo de objeto
-		ArrayList<Cuenta> lista = new ArrayList<>();
+		// List<Cliente> listaCLientes = new LinkedList<>();
+		
+		
+		// Obligatorio especificar        No es obligatorio
+		List<Cuenta> lista = new Vector<Cuenta>();
+		// referencia    Objeto -> HEAP
 		Cuenta cc = new CuentaCorriente(11, 22);
 		Cuenta cc2 = new CuentaCorriente(13, 42);
 		Cuenta cc3 = new CuentaCorriente(11, 22);
@@ -17,8 +23,8 @@ public class TestArrayList {
 		lista.add(cc);
 		lista.add(cc2);
 		
-		//	Cliente cliente = new Cliente();
-		//	lista.add(cliente);
+		// Cliente cliente = new Cliente();
+		// lista.add(cliente);
 		
 		Cuenta obtenerCuenta = lista.get(0);
 		System.out.println(obtenerCuenta);
@@ -33,9 +39,10 @@ public class TestArrayList {
 		}
 		
 		boolean contiene = lista.contains(cc3);
-		if (contiene) {
-			System.out.println("Si");
-		}
 		
+		// Por referencia
+		if (contiene) {
+			System.out.println("Si, es igual (equals)");
+		}
 	}
 }
